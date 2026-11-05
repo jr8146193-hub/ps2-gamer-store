@@ -4,130 +4,215 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
 <title>PS2 GAMER STORE</title>
 <style>
 :root {
   --pink: #ff65ad;
+  --pink2: #ff9bc9;
   --black: #090909;
   --panel: #17131a;
-  --text: #ffffff;
   --muted: #aaa0aa;
 }
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
   background: var(--black);
-  color: var(--text);
+  color: white;
   font-family: Arial, sans-serif;
 }
 header {
-  padding: 22px 7%;
+  padding: 20px 7%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 18px;
-  border-bottom: 1px solid #30202a;
+  gap: 20px;
+  background: #100d11;
+  border-bottom: 1px solid #382333;
 }
 .logo {
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 900;
+  letter-spacing: 1px;
 }
 .logo span { color: var(--pink); }
+nav { display: flex; gap: 22px; flex-wrap: wrap; }
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
   font-size: 14px;
 }
 nav a:hover { color: var(--pink); }
 .hero {
-  padding: 85px 7%;
   text-align: center;
-  background: radial-gradient(ellipse at center, #492039 0%, #160e16 48%, #090909 80%);
+  padding: 95px 20px;
+  background:
+    radial-gradient(ellipse at center, #57213f 0%, #21101d 42%, #090909 80%);
+}
+.hero .tag {
+  color: var(--pink2);
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: bold;
 }
 .hero h1 {
-  font-size: clamp(36px, 7vw, 68px);
-  margin: 0 0 15px;
+  font-size: clamp(38px, 7vw, 76px);
+  margin: 20px 0;
 }
 .hero h1 span { color: var(--pink); }
 .hero p {
-  color: #d1c5ce;
-  font-size: 17px;
-  line-height: 1.6;
+  color: #d0c4ce;
+  line-height: 1.7;
+  font-size: 16px;
 }
 .button {
   display: inline-block;
+  padding: 14px 25px;
+  margin-top: 18px;
   background: var(--pink);
   color: #160b12;
-  padding: 14px 25px;
-  border-radius: 8px;
-  font-weight: bold;
   text-decoration: none;
-  margin-top: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 .button:hover { background: white; }
-section { padding: 45px 7%; }
-h2 { font-size: 28px; }
-h2 span { color: var(--pink); }
-.search {
-  width: 100%;
-  max-width: 550px;
-  padding: 15px;
-  border: 1px solid #553247;
-  background: #17131a;
-  border-radius: 8px;
-  color: white;
-  font-size: 16px;
+section { padding: 55px 7%; }
+.section-title { font-size: 29px; }
+.section-title span { color: var(--pink); }
+.intro { color: var(--muted); line-height: 1.6; }
+.tools {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0;
 }
-.search:focus { outline: 1px solid var(--pink); }
+.search, .filter {
+  background: #17131a;
+  color: white;
+  border: 1px solid #563348;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 15px;
+}
+.search { flex: 1; min-width: 220px; }
+.filter { min-width: 180px; }
+.search:focus, .filter:focus {
+  outline: 2px solid var(--pink);
+}
 .catalog {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-top: 28px;
+  gap: 22px;
 }
 .game {
-  background: var(--panel);
-  border: 1px solid #33232e;
-  border-radius: 12px;
   overflow: hidden;
-  padding-bottom: 20px;
+  background: var(--panel);
+  border: 1px solid #352331;
+  border-radius: 13px;
+  transition: transform .2s, border-color .2s;
+}
+.game:hover {
+  transform: translateY(-5px);
+  border-color: var(--pink);
 }
 .cover {
-  height: 145px;
-  display: grid;
-  place-items: center;
-  background: linear-gradient(135deg, #35152a, #111);
-  color: var(--pink);
-  font-size: 35px;
+  height: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34px;
   font-weight: 900;
+  letter-spacing: 3px;
+  color: white;
+  background: linear-gradient(135deg, #56203f, #17101a 70%);
 }
-.game h3, .game p { margin: 14px 17px; }
-.game p { color: var(--muted); font-size: 14px; }
-.status {
+.cover.two {
+  background: linear-gradient(135deg, #252c54, #121018);
+}
+.cover.three {
+  background: linear-gradient(135deg, #65402b, #171018);
+}
+.game-content { padding: 18px; }
+.game h3 { margin: 0 0 10px; }
+.game p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.category {
+  color: var(--pink2);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.details {
+  width: 100%;
+  padding: 11px;
+  margin-top: 10px;
+  border: 1px solid var(--pink);
   color: var(--pink);
-  font-size: 12px;
-  margin: 0 17px;
+  background: transparent;
+  border-radius: 7px;
+  cursor: pointer;
 }
-.download {
-  background: #171019;
-  border: 1px solid #553047;
-  border-radius: 14px;
+.details:hover {
+  background: var(--pink);
+  color: black;
+}
+.empty {
+  display: none;
+  color: var(--muted);
+  padding: 30px;
   text-align: center;
-  padding: 38px 20px;
+}
+.app-box {
+  text-align: center;
+  background: linear-gradient(135deg, #291222, #151018);
+  border: 1px solid #63334e;
+  border-radius: 16px;
+  padding: 45px 20px;
+}
+.app-box h2 span { color: var(--pink); }
+.app-box p {
+  color: #c6b9c3;
+  line-height: 1.7;
 }
 footer {
-  border-top: 1px solid #30202a;
-  padding: 25px;
+  border-top: 1px solid #382333;
+  padding: 30px 15px;
   text-align: center;
   color: var(--muted);
   font-size: 13px;
+  line-height: 1.8;
+}
+footer strong { color: var(--pink); }
+dialog {
+  background: #17131a;
+  color: white;
+  border: 1px solid var(--pink);
+  border-radius: 14px;
+  padding: 25px;
+  max-width: 420px;
+  width: calc(100% - 35px);
+}
+dialog::backdrop { background: #000c; }
+dialog p { color: var(--muted); line-height: 1.6; }
+.close {
+  background: var(--pink);
+  color: black;
+  border: 0;
+  padding: 10px 18px;
+  border-radius: 7px;
+  cursor: pointer;
 }
 @media(max-width:600px) {
   header { justify-content: center; }
-  nav a { margin: 0 7px; }
-  .hero { padding: 65px 6%; }
+  nav { justify-content: center; }
+  .hero { padding: 65px 15px; }
 }
 </style>
 </head>
@@ -137,61 +222,119 @@ footer {
   <div class="logo">PS2 <span>GAMER STORE</span></div>
   <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#juegos">Juegos</a>
+    <a href="#juegos">Catálogo</a>
     <a href="#app">Aplicación</a>
   </nav>
 </header>
 
+<main>
 <div class="hero" id="inicio">
-  <h1>REVIVE LA <span>LEYENDA</span></h1>
-  <p>Tu espacio dedicado al mundo de PlayStation 2.<br>
-  Juegos autorizados, homebrew y herramientas para OPL.</p>
+  <div class="tag">LA LEYENDA CONTINÚA</div>
+  <h1>PLAYSTATION <span>2</span></h1>
+  <p>Un espacio para descubrir, organizar y disfrutar<br>
+  del mundo de PlayStation 2.</p>
   <a class="button" href="#juegos">EXPLORAR CATÁLOGO</a>
 </div>
 
 <section id="juegos">
-  <h2>NUESTRO <span>CATÁLOGO</span></h2>
-  <p style="color:#aaa">Busca juegos y descubre nuestro catálogo.</p>
-  <input class="search" id="search"
-    placeholder="Buscar un juego..."
-    oninput="buscar()">
+  <h2 class="section-title">NUESTRO <span>CATÁLOGO</span></h2>
+  <p class="intro">
+    Explora juegos homebrew, demos y proyectos con distribución autorizada.
+  </p>
+
+  <div class="tools">
+    <input class="search" id="search"
+      placeholder="Buscar juegos..."
+      oninput="filtrar()">
+    <select class="filter" id="category" onchange="filtrar()">
+      <option value="todos">Todas las categorías</option>
+      <option value="homebrew">Homebrew</option>
+      <option value="demo">Demos</option>
+      <option value="utilidades">Utilidades</option>
+    </select>
+  </div>
 
   <div class="catalog" id="catalog">
-    <article class="game">
-      <div class="cover">PS2</div>
-      <h3>Catálogo en preparación</h3>
-      <p>Próximamente encontrarás aquí juegos homebrew, demos y títulos autorizados.</p>
-      <div class="status">PRÓXIMAMENTE</div>
+    <article class="game" data-category="homebrew">
+      <div class="cover">HOME<br>BREW</div>
+      <div class="game-content">
+        <div class="category">HOMEBREW</div>
+        <h3>Juegos Homebrew</h3>
+        <p>Proyectos independientes creados para PlayStation 2.</p>
+        <button class="details" onclick="detalles('Juegos Homebrew','Aquí publicaremos proyectos homebrew con autorización de distribución.')">VER INFORMACIÓN</button>
+      </div>
+    </article>
+
+    <article class="game" data-category="demo">
+      <div class="cover two">DEMO<br>ZONE</div>
+      <div class="game-content">
+        <div class="category">DEMOS</div>
+        <h3>Zona de demos</h3>
+        <p>Demostraciones gratuitas y archivos publicados legalmente.</p>
+        <button class="details" onclick="detalles('Zona de demos','Aquí aparecerán demostraciones disponibles para descargar legalmente.')">VER INFORMACIÓN</button>
+      </div>
+    </article>
+
+    <article class="game" data-category="utilidades">
+      <div class="cover three">PS2<br>TOOLS</div>
+      <div class="game-content">
+        <div class="category">UTILIDADES</div>
+        <h3>Herramientas PS2</h3>
+        <p>Herramientas y recursos para configurar tu consola y OPL.</p>
+        <button class="details" onclick="detalles('Herramientas PS2','Aquí reuniremos herramientas verificadas para la comunidad.')">VER INFORMACIÓN</button>
+      </div>
     </article>
   </div>
+  <div class="empty" id="empty">No encontramos resultados.</div>
 </section>
 
 <section id="app">
-  <div class="download">
-    <h2>DESCARGA NUESTRA <span>APLICACIÓN</span></h2>
-    <p style="color:#c5b9c2">
-      Administra tu biblioteca de PS2 desde Windows.
-      Muy pronto podrás descargar PS2 GAMER STORE desde aquí.
-    </p>
-    <a class="button" href="#app">APLICACIÓN PRÓXIMAMENTE</a>
+  <div class="app-box">
+    <h2>PS2 GAMER <span>STORE</span> PARA WINDOWS</h2>
+    <p>Administra tu biblioteca y prepara tus juegos autorizados<br>
+    para utilizarlos con tu USB y OPL.</p>
+    <a class="button" href="#app">DESCARGA PRÓXIMAMENTE</a>
   </div>
 </section>
+</main>
 
 <footer>
-  PS2 GAMER STORE © 2026 · Proyecto independiente
-  <br><br>
-  Solo se ofrecerán archivos con distribución autorizada.
+  <strong>PS2 GAMER STORE</strong><br>
+  Proyecto independiente para la comunidad PlayStation 2.<br>
+  Solo archivos con distribución autorizada.
 </footer>
 
+<dialog id="info">
+  <h2 id="info-title"></h2>
+  <p id="info-text"></p>
+  <button class="close" onclick="document.getElementById('info').close()">CERRAR</button>
+</dialog>
+
 <script>
-function buscar() {
-  const valor = document.getElementById("search").value.toLowerCase();
-  document.querySelectorAll(".game").forEach(juego => {
-    juego.style.display = juego.innerText.toLowerCase().includes(valor)
-      ? "block" : "none";
+function filtrar() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const cat = document.getElementById('category').value;
+  let visibles = 0;
+
+  document.querySelectorAll('.game').forEach(card => {
+    const coincideTexto = card.innerText.toLowerCase().includes(q);
+    const coincideCat = cat === 'todos' || card.dataset.category === cat;
+    const mostrar = coincideTexto && coincideCat;
+    card.style.display = mostrar ? '' : 'none';
+    if (mostrar) visibles++;
   });
+
+  document.getElementById('empty').style.display =
+    visibles === 0 ? 'block' : 'none';
+}
+
+function detalles(titulo, texto) {
+  document.getElementById('info-title').textContent = titulo;
+  document.getElementById('info-text').textContent = texto;
+  document.getElementById('info').showModal();
 }
 </script>
 
 </body>
 </html>
+
