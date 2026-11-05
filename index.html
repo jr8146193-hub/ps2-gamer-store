@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090909">
+
 <title>PS2 GAMER STORE</title>
 
 <style>
@@ -16,9 +17,13 @@
   --muted: #aaa0aa;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -26,6 +31,8 @@ body {
   color: white;
   font-family: Arial, sans-serif;
 }
+
+/* HEADER */
 
 header {
   padding: 20px 7%;
@@ -44,7 +51,9 @@ header {
   letter-spacing: 1px;
 }
 
-.logo span { color: var(--pink); }
+.logo span {
+  color: var(--pink);
+}
 
 nav {
   display: flex;
@@ -56,13 +65,18 @@ nav a {
   color: white;
   text-decoration: none;
   font-size: 14px;
+  transition: .2s;
 }
 
-nav a:hover { color: var(--pink); }
+nav a:hover {
+  color: var(--pink);
+}
+
+/* PORTADA PRINCIPAL */
 
 .hero {
   text-align: center;
-  padding: 95px 20px;
+  padding: 105px 20px;
   background:
     radial-gradient(ellipse at center, #57213f 0%, #21101d 42%, #090909 80%);
 }
@@ -79,7 +93,9 @@ nav a:hover { color: var(--pink); }
   margin: 20px 0;
 }
 
-.hero h1 span { color: var(--pink); }
+.hero h1 span {
+  color: var(--pink);
+}
 
 .hero p {
   color: #d0c4ce;
@@ -98,15 +114,27 @@ nav a:hover { color: var(--pink); }
   border-radius: 8px;
   border: none;
   cursor: pointer;
+  transition: .2s;
 }
 
-.button:hover { background: white; }
+.button:hover {
+  background: white;
+  transform: translateY(-2px);
+}
 
-section { padding: 55px 7%; }
+/* CATALOGO */
 
-.section-title { font-size: 29px; }
+section {
+  padding: 60px 7%;
+}
 
-.section-title span { color: var(--pink); }
+.section-title {
+  font-size: 29px;
+}
+
+.section-title span {
+  color: var(--pink);
+}
 
 .intro {
   color: var(--muted);
@@ -120,7 +148,8 @@ section { padding: 55px 7%; }
   margin: 25px 0;
 }
 
-.search, .filter {
+.search,
+.filter {
   background: #17131a;
   color: white;
   border: 1px solid #563348;
@@ -134,78 +163,116 @@ section { padding: 55px 7%; }
   min-width: 220px;
 }
 
-.filter { min-width: 180px; }
+.filter {
+  min-width: 190px;
+}
 
-.search:focus, .filter:focus {
+.search:focus,
+.filter:focus {
   outline: 2px solid var(--pink);
 }
 
+/* TARJETAS */
+
 .catalog {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
 }
 
 .game {
   overflow: hidden;
   background: var(--panel);
   border: 1px solid #352331;
-  border-radius: 13px;
-  transition: transform .2s, border-color .2s;
+  border-radius: 15px;
+  transition: transform .3s, border-color .3s, box-shadow .3s;
 }
 
 .game:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   border-color: var(--pink);
+  box-shadow: 0 0 25px #ff65ad35;
 }
+
+/* IMAGENES DE FONDO */
 
 .cover {
-  height: 190px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 34px;
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: #201321;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s;
+}
+
+.game:hover .cover img {
+  transform: scale(1.08);
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(9,9,9,.95),
+    rgba(9,9,9,.15) 65%,
+    rgba(9,9,9,.05)
+  );
+}
+
+.cover-title {
+  position: absolute;
+  z-index: 2;
+  bottom: 18px;
+  left: 20px;
+  right: 15px;
+  font-size: 27px;
   font-weight: 900;
-  letter-spacing: 3px;
-  color: white;
-  background: linear-gradient(135deg, #56203f, #17101a 70%);
+  letter-spacing: 2px;
+  text-shadow: 0 2px 12px black;
 }
 
-.cover.two {
-  background: linear-gradient(135deg, #252c54, #121018);
-}
-
-.cover.three {
-  background: linear-gradient(135deg, #65402b, #171018);
-}
-
-.game-content { padding: 18px; }
-
-.game h3 { margin: 0 0 10px; }
-
-.game p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
+.game-content {
+  padding: 20px;
 }
 
 .category {
   color: var(--pink2);
   font-size: 11px;
   font-weight: bold;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+}
+
+.game h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.game p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 42px;
 }
 
 .details {
   width: 100%;
-  padding: 11px;
+  padding: 12px;
   margin-top: 10px;
   border: 1px solid var(--pink);
   color: var(--pink);
   background: transparent;
   border-radius: 7px;
   cursor: pointer;
+  font-weight: bold;
+  transition: .2s;
 }
 
 .details:hover {
@@ -220,6 +287,8 @@ section { padding: 55px 7%; }
   text-align: center;
 }
 
+/* APLICACION */
+
 .app-box {
   text-align: center;
   background: linear-gradient(135deg, #291222, #151018);
@@ -228,12 +297,16 @@ section { padding: 55px 7%; }
   padding: 45px 20px;
 }
 
-.app-box h2 span { color: var(--pink); }
+.app-box h2 span {
+  color: var(--pink);
+}
 
 .app-box p {
   color: #c6b9c3;
   line-height: 1.7;
 }
+
+/* FOOTER */
 
 footer {
   border-top: 1px solid #382333;
@@ -244,7 +317,11 @@ footer {
   line-height: 1.8;
 }
 
-footer strong { color: var(--pink); }
+footer strong {
+  color: var(--pink);
+}
+
+/* VENTANA DE INFORMACION */
 
 dialog {
   background: #17131a;
@@ -256,7 +333,9 @@ dialog {
   width: calc(100% - 35px);
 }
 
-dialog::backdrop { background: #000c; }
+dialog::backdrop {
+  background: #000c;
+}
 
 dialog p {
   color: var(--muted);
@@ -272,10 +351,24 @@ dialog p {
   cursor: pointer;
 }
 
+/* MOVILES */
+
 @media(max-width:600px) {
-  header { justify-content: center; }
-  nav { justify-content: center; }
-  .hero { padding: 65px 15px; }
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 65px 15px;
+  }
+
+  .cover {
+    height: 220px;
+  }
 }
 </style>
 </head>
@@ -283,18 +376,25 @@ dialog p {
 <body>
 
 <header>
-  <div class="logo">PS2 <span>GAMER STORE</span></div>
+
+  <div class="logo">
+    PS2 <span>GAMER STORE</span>
+  </div>
 
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#juegos">Catálogo</a>
     <a href="#app">Aplicación</a>
   </nav>
+
 </header>
 
 <main>
 
+<!-- PORTADA PRINCIPAL -->
+
 <div class="hero" id="inicio">
+
   <div class="tag">LA LEYENDA CONTINÚA</div>
 
   <h1>PLAYSTATION <span>2</span></h1>
@@ -304,8 +404,13 @@ dialog p {
     del mundo de PlayStation.
   </p>
 
-  <a class="button" href="#juegos">EXPLORAR CATÁLOGO</a>
+  <a class="button" href="#juegos">
+    EXPLORAR CATÁLOGO
+  </a>
+
 </div>
+
+<!-- CATALOGO -->
 
 <section id="juegos">
 
@@ -317,6 +422,8 @@ dialog p {
     Explora juegos, modificaciones y herramientas
     con distribución autorizada.
   </p>
+
+  <!-- BUSCADOR Y FILTROS -->
 
   <div class="tools">
 
@@ -342,12 +449,21 @@ dialog p {
 
   <div class="catalog" id="catalog">
 
-    <!-- JUEGOS DE PS2 -->
+    <!-- JUEGOS PS2 -->
 
     <article class="game" data-category="ps2">
 
       <div class="cover">
-        JUEGOS<br>PS2
+
+        <img
+          src="imagenes/ps2.jpg"
+          alt="Consola y mando de PlayStation 2"
+        >
+
+        <div class="cover-title">
+          JUEGOS DE PS2
+        </div>
+
       </div>
 
       <div class="game-content">
@@ -357,7 +473,7 @@ dialog p {
         <h3>Juegos de PS2</h3>
 
         <p>
-          Descubre juegos de PlayStation 2
+          Descubre juegos y proyectos para PlayStation 2
           con distribución autorizada.
         </p>
 
@@ -365,21 +481,31 @@ dialog p {
           class="details"
           onclick="detalles(
             'Juegos de PS2',
-            'Aquí encontrarás juegos de PS2 con distribución autorizada.'
+            'Aquí encontrarás juegos y proyectos de PS2 con distribución autorizada.'
           )"
         >
           VER INFORMACIÓN
         </button>
 
       </div>
+
     </article>
 
-    <!-- JUEGOS DE PS1 -->
+    <!-- JUEGOS PS1 -->
 
     <article class="game" data-category="ps1">
 
-      <div class="cover two">
-        JUEGOS<br>PS1
+      <div class="cover">
+
+        <img
+          src="imagenes/ps1.jpg"
+          alt="Consola y mando de PlayStation 1"
+        >
+
+        <div class="cover-title">
+          JUEGOS DE PS1
+        </div>
+
       </div>
 
       <div class="game-content">
@@ -404,14 +530,24 @@ dialog p {
         </button>
 
       </div>
+
     </article>
 
     <!-- MODS Y HERRAMIENTAS -->
 
     <article class="game" data-category="mods">
 
-      <div class="cover three">
-        MODS<br>TOOLS
+      <div class="cover">
+
+        <img
+          src="imagenes/mods.png"
+          alt="Consola, USB y herramientas para PlayStation 2"
+        >
+
+        <div class="cover-title">
+          MODS Y TOOLS
+        </div>
+
       </div>
 
       <div class="game-content">
@@ -436,6 +572,7 @@ dialog p {
         </button>
 
       </div>
+
     </article>
 
   </div>
@@ -445,6 +582,8 @@ dialog p {
   </div>
 
 </section>
+
+<!-- APLICACION WINDOWS -->
 
 <section id="app">
 
@@ -469,6 +608,8 @@ dialog p {
 
 </main>
 
+<!-- PIE DE PAGINA -->
+
 <footer>
 
   <strong>PS2 GAMER STORE</strong><br>
@@ -478,6 +619,8 @@ dialog p {
   Solo archivos con distribución autorizada.
 
 </footer>
+
+<!-- VENTANA DE INFORMACION -->
 
 <dialog id="info">
 
@@ -493,6 +636,8 @@ dialog p {
   </button>
 
 </dialog>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
@@ -518,9 +663,11 @@ function filtrar() {
       cat === 'todos' ||
       card.dataset.category === cat;
 
-    const mostrar = coincideTexto && coincideCat;
+    const mostrar =
+      coincideTexto && coincideCat;
 
-    card.style.display = mostrar ? '' : 'none';
+    card.style.display =
+      mostrar ? '' : 'none';
 
     if (mostrar) visibles++;
 
@@ -533,9 +680,11 @@ function filtrar() {
 
 function detalles(titulo, texto) {
 
-  document.getElementById('info-title').textContent = titulo;
+  document.getElementById('info-title').textContent =
+    titulo;
 
-  document.getElementById('info-text').textContent = texto;
+  document.getElementById('info-text').textContent =
+    texto;
 
   document.getElementById('info').showModal();
 
