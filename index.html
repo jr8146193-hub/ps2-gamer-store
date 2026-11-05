@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#090909">
 <title>PS2 GAMER STORE</title>
+
 <style>
 :root {
   --pink: #ff65ad;
@@ -14,14 +15,18 @@
   --panel: #17131a;
   --muted: #aaa0aa;
 }
+
 * { box-sizing: border-box; }
+
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
   background: var(--black);
   color: white;
   font-family: Arial, sans-serif;
 }
+
 header {
   padding: 20px 7%;
   display: flex;
@@ -32,41 +37,56 @@ header {
   background: #100d11;
   border-bottom: 1px solid #382333;
 }
+
 .logo {
   font-size: 23px;
   font-weight: 900;
   letter-spacing: 1px;
 }
+
 .logo span { color: var(--pink); }
-nav { display: flex; gap: 22px; flex-wrap: wrap; }
+
+nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+
 nav a {
   color: white;
   text-decoration: none;
   font-size: 14px;
 }
+
 nav a:hover { color: var(--pink); }
+
 .hero {
   text-align: center;
   padding: 95px 20px;
   background:
     radial-gradient(ellipse at center, #57213f 0%, #21101d 42%, #090909 80%);
 }
+
 .hero .tag {
   color: var(--pink2);
   letter-spacing: 4px;
   font-size: 12px;
   font-weight: bold;
 }
+
 .hero h1 {
   font-size: clamp(38px, 7vw, 76px);
   margin: 20px 0;
 }
+
 .hero h1 span { color: var(--pink); }
+
 .hero p {
   color: #d0c4ce;
   line-height: 1.7;
   font-size: 16px;
 }
+
 .button {
   display: inline-block;
   padding: 14px 25px;
@@ -79,17 +99,27 @@ nav a:hover { color: var(--pink); }
   border: none;
   cursor: pointer;
 }
+
 .button:hover { background: white; }
+
 section { padding: 55px 7%; }
+
 .section-title { font-size: 29px; }
+
 .section-title span { color: var(--pink); }
-.intro { color: var(--muted); line-height: 1.6; }
+
+.intro {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .tools {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   margin: 25px 0;
 }
+
 .search, .filter {
   background: #17131a;
   color: white;
@@ -98,16 +128,24 @@ section { padding: 55px 7%; }
   padding: 14px;
   font-size: 15px;
 }
-.search { flex: 1; min-width: 220px; }
+
+.search {
+  flex: 1;
+  min-width: 220px;
+}
+
 .filter { min-width: 180px; }
+
 .search:focus, .filter:focus {
   outline: 2px solid var(--pink);
 }
+
 .catalog {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 22px;
 }
+
 .game {
   overflow: hidden;
   background: var(--panel);
@@ -115,40 +153,50 @@ section { padding: 55px 7%; }
   border-radius: 13px;
   transition: transform .2s, border-color .2s;
 }
+
 .game:hover {
   transform: translateY(-5px);
   border-color: var(--pink);
 }
+
 .cover {
-  height: 175px;
+  height: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   font-size: 34px;
   font-weight: 900;
   letter-spacing: 3px;
   color: white;
   background: linear-gradient(135deg, #56203f, #17101a 70%);
 }
+
 .cover.two {
   background: linear-gradient(135deg, #252c54, #121018);
 }
+
 .cover.three {
   background: linear-gradient(135deg, #65402b, #171018);
 }
+
 .game-content { padding: 18px; }
+
 .game h3 { margin: 0 0 10px; }
+
 .game p {
   color: var(--muted);
   font-size: 13px;
   line-height: 1.5;
 }
+
 .category {
   color: var(--pink2);
   font-size: 11px;
   font-weight: bold;
   letter-spacing: 1px;
 }
+
 .details {
   width: 100%;
   padding: 11px;
@@ -159,16 +207,19 @@ section { padding: 55px 7%; }
   border-radius: 7px;
   cursor: pointer;
 }
+
 .details:hover {
   background: var(--pink);
   color: black;
 }
+
 .empty {
   display: none;
   color: var(--muted);
   padding: 30px;
   text-align: center;
 }
+
 .app-box {
   text-align: center;
   background: linear-gradient(135deg, #291222, #151018);
@@ -176,11 +227,14 @@ section { padding: 55px 7%; }
   border-radius: 16px;
   padding: 45px 20px;
 }
+
 .app-box h2 span { color: var(--pink); }
+
 .app-box p {
   color: #c6b9c3;
   line-height: 1.7;
 }
+
 footer {
   border-top: 1px solid #382333;
   padding: 30px 15px;
@@ -189,7 +243,9 @@ footer {
   font-size: 13px;
   line-height: 1.8;
 }
+
 footer strong { color: var(--pink); }
+
 dialog {
   background: #17131a;
   color: white;
@@ -199,8 +255,14 @@ dialog {
   max-width: 420px;
   width: calc(100% - 35px);
 }
+
 dialog::backdrop { background: #000c; }
-dialog p { color: var(--muted); line-height: 1.6; }
+
+dialog p {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .close {
   background: var(--pink);
   color: black;
@@ -209,6 +271,7 @@ dialog p { color: var(--muted); line-height: 1.6; }
   border-radius: 7px;
   cursor: pointer;
 }
+
 @media(max-width:600px) {
   header { justify-content: center; }
   nav { justify-content: center; }
@@ -216,10 +279,12 @@ dialog p { color: var(--muted); line-height: 1.6; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <div class="logo">PS2 <span>GAMER STORE</span></div>
+
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#juegos">Catálogo</a>
@@ -228,113 +293,255 @@ dialog p { color: var(--muted); line-height: 1.6; }
 </header>
 
 <main>
+
 <div class="hero" id="inicio">
   <div class="tag">LA LEYENDA CONTINÚA</div>
+
   <h1>PLAYSTATION <span>2</span></h1>
-  <p>Un espacio para descubrir, organizar y disfrutar<br>
-  del mundo de PlayStation 2.</p>
+
+  <p>
+    Un espacio para descubrir, organizar y disfrutar<br>
+    del mundo de PlayStation.
+  </p>
+
   <a class="button" href="#juegos">EXPLORAR CATÁLOGO</a>
 </div>
 
 <section id="juegos">
-  <h2 class="section-title">NUESTRO <span>CATÁLOGO</span></h2>
+
+  <h2 class="section-title">
+    NUESTRO <span>CATÁLOGO</span>
+  </h2>
+
   <p class="intro">
-    Explora juegos homebrew, demos y proyectos con distribución autorizada.
+    Explora juegos, modificaciones y herramientas
+    con distribución autorizada.
   </p>
 
   <div class="tools">
-    <input class="search" id="search"
+
+    <input
+      class="search"
+      id="search"
       placeholder="Buscar juegos..."
-      oninput="filtrar()">
-    <select class="filter" id="category" onchange="filtrar()">
+      oninput="filtrar()"
+    >
+
+    <select
+      class="filter"
+      id="category"
+      onchange="filtrar()"
+    >
       <option value="todos">Todas las categorías</option>
-      <option value="homebrew">Homebrew</option>
-      <option value="demo">Demos</option>
-      <option value="utilidades">Utilidades</option>
+      <option value="ps2">Juegos de PS2</option>
+      <option value="ps1">Juegos de PS1</option>
+      <option value="mods">Mods y herramientas</option>
     </select>
+
   </div>
 
   <div class="catalog" id="catalog">
-    <article class="game" data-category="homebrew">
-      <div class="cover">HOME<br>BREW</div>
+
+    <!-- JUEGOS DE PS2 -->
+
+    <article class="game" data-category="ps2">
+
+      <div class="cover">
+        JUEGOS<br>PS2
+      </div>
+
       <div class="game-content">
-        <div class="category">HOMEBREW</div>
-        <h3>Juegos Homebrew</h3>
-        <p>Proyectos independientes creados para PlayStation 2.</p>
-        <button class="details" onclick="detalles('Juegos Homebrew','Aquí publicaremos proyectos homebrew con autorización de distribución.')">VER INFORMACIÓN</button>
+
+        <div class="category">PLAYSTATION 2</div>
+
+        <h3>Juegos de PS2</h3>
+
+        <p>
+          Descubre juegos de PlayStation 2
+          con distribución autorizada.
+        </p>
+
+        <button
+          class="details"
+          onclick="detalles(
+            'Juegos de PS2',
+            'Aquí encontrarás juegos de PS2 con distribución autorizada.'
+          )"
+        >
+          VER INFORMACIÓN
+        </button>
+
       </div>
     </article>
 
-    <article class="game" data-category="demo">
-      <div class="cover two">DEMO<br>ZONE</div>
+    <!-- JUEGOS DE PS1 -->
+
+    <article class="game" data-category="ps1">
+
+      <div class="cover two">
+        JUEGOS<br>PS1
+      </div>
+
       <div class="game-content">
-        <div class="category">DEMOS</div>
-        <h3>Zona de demos</h3>
-        <p>Demostraciones gratuitas y archivos publicados legalmente.</p>
-        <button class="details" onclick="detalles('Zona de demos','Aquí aparecerán demostraciones disponibles para descargar legalmente.')">VER INFORMACIÓN</button>
+
+        <div class="category">PLAYSTATION 1</div>
+
+        <h3>Juegos de PS1</h3>
+
+        <p>
+          Explora juegos y proyectos de PlayStation 1
+          con distribución autorizada.
+        </p>
+
+        <button
+          class="details"
+          onclick="detalles(
+            'Juegos de PS1',
+            'Aquí encontrarás juegos de PS1 con distribución autorizada.'
+          )"
+        >
+          VER INFORMACIÓN
+        </button>
+
       </div>
     </article>
 
-    <article class="game" data-category="utilidades">
-      <div class="cover three">PS2<br>TOOLS</div>
+    <!-- MODS Y HERRAMIENTAS -->
+
+    <article class="game" data-category="mods">
+
+      <div class="cover three">
+        MODS<br>TOOLS
+      </div>
+
       <div class="game-content">
-        <div class="category">UTILIDADES</div>
-        <h3>Herramientas PS2</h3>
-        <p>Herramientas y recursos para configurar tu consola y OPL.</p>
-        <button class="details" onclick="detalles('Herramientas PS2','Aquí reuniremos herramientas verificadas para la comunidad.')">VER INFORMACIÓN</button>
+
+        <div class="category">MODS Y HERRAMIENTAS</div>
+
+        <h3>Mods y herramientas</h3>
+
+        <p>
+          Recursos, modificaciones y herramientas
+          para la comunidad PlayStation.
+        </p>
+
+        <button
+          class="details"
+          onclick="detalles(
+            'Mods y herramientas',
+            'Aquí encontrarás modificaciones y herramientas disponibles legalmente.'
+          )"
+        >
+          VER INFORMACIÓN
+        </button>
+
       </div>
     </article>
+
   </div>
-  <div class="empty" id="empty">No encontramos resultados.</div>
+
+  <div class="empty" id="empty">
+    No encontramos resultados.
+  </div>
+
 </section>
 
 <section id="app">
+
   <div class="app-box">
-    <h2>PS2 GAMER <span>STORE</span> PARA WINDOWS</h2>
-    <p>Administra tu biblioteca y prepara tus juegos autorizados<br>
-    para utilizarlos con tu USB y OPL.</p>
-    <a class="button" href="#app">DESCARGA PRÓXIMAMENTE</a>
+
+    <h2>
+      PS2 GAMER <span>STORE</span> PARA WINDOWS
+    </h2>
+
+    <p>
+      Administra tu biblioteca y prepara tus juegos autorizados<br>
+      para utilizarlos con tu USB y OPL.
+    </p>
+
+    <a class="button" href="#app">
+      DESCARGA PRÓXIMAMENTE
+    </a>
+
   </div>
+
 </section>
+
 </main>
 
 <footer>
+
   <strong>PS2 GAMER STORE</strong><br>
-  Proyecto independiente para la comunidad PlayStation 2.<br>
+
+  Proyecto independiente para la comunidad PlayStation.<br>
+
   Solo archivos con distribución autorizada.
+
 </footer>
 
 <dialog id="info">
+
   <h2 id="info-title"></h2>
+
   <p id="info-text"></p>
-  <button class="close" onclick="document.getElementById('info').close()">CERRAR</button>
+
+  <button
+    class="close"
+    onclick="document.getElementById('info').close()"
+  >
+    CERRAR
+  </button>
+
 </dialog>
 
 <script>
+
 function filtrar() {
-  const q = document.getElementById('search').value.toLowerCase();
-  const cat = document.getElementById('category').value;
+
+  const q = document
+    .getElementById('search')
+    .value
+    .toLowerCase();
+
+  const cat = document
+    .getElementById('category')
+    .value;
+
   let visibles = 0;
 
   document.querySelectorAll('.game').forEach(card => {
-    const coincideTexto = card.innerText.toLowerCase().includes(q);
-    const coincideCat = cat === 'todos' || card.dataset.category === cat;
+
+    const coincideTexto =
+      card.innerText.toLowerCase().includes(q);
+
+    const coincideCat =
+      cat === 'todos' ||
+      card.dataset.category === cat;
+
     const mostrar = coincideTexto && coincideCat;
+
     card.style.display = mostrar ? '' : 'none';
+
     if (mostrar) visibles++;
+
   });
 
   document.getElementById('empty').style.display =
     visibles === 0 ? 'block' : 'none';
+
 }
 
 function detalles(titulo, texto) {
+
   document.getElementById('info-title').textContent = titulo;
+
   document.getElementById('info-text').textContent = texto;
+
   document.getElementById('info').showModal();
+
 }
+
 </script>
 
 </body>
 </html>
-
