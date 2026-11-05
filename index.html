@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,13 +17,9 @@
   --muted: #aaa0aa;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -31,8 +27,6 @@ body {
   color: white;
   font-family: Arial, sans-serif;
 }
-
-/* HEADER */
 
 header {
   padding: 20px 7%;
@@ -51,7 +45,8 @@ header {
   letter-spacing: 1px;
 }
 
-.logo span {
+.logo span, .hero h1 span, .section-title span,
+.app-box h2 span {
   color: var(--pink);
 }
 
@@ -68,11 +63,7 @@ nav a {
   transition: .2s;
 }
 
-nav a:hover {
-  color: var(--pink);
-}
-
-/* PORTADA PRINCIPAL */
+nav a:hover { color: var(--pink); }
 
 .hero {
   text-align: center;
@@ -91,10 +82,6 @@ nav a:hover {
 .hero h1 {
   font-size: clamp(38px, 7vw, 76px);
   margin: 20px 0;
-}
-
-.hero h1 span {
-  color: var(--pink);
 }
 
 .hero p {
@@ -122,19 +109,9 @@ nav a:hover {
   transform: translateY(-2px);
 }
 
-/* CATALOGO */
+section { padding: 60px 7%; }
 
-section {
-  padding: 60px 7%;
-}
-
-.section-title {
-  font-size: 29px;
-}
-
-.section-title span {
-  color: var(--pink);
-}
+.section-title { font-size: 29px; }
 
 .intro {
   color: var(--muted);
@@ -148,8 +125,7 @@ section {
   margin: 25px 0;
 }
 
-.search,
-.filter {
+.search, .filter {
   background: #17131a;
   color: white;
   border: 1px solid #563348;
@@ -163,16 +139,11 @@ section {
   min-width: 220px;
 }
 
-.filter {
-  min-width: 190px;
-}
+.filter { min-width: 190px; }
 
-.search:focus,
-.filter:focus {
+.search:focus, .filter:focus {
   outline: 2px solid var(--pink);
 }
-
-/* TARJETAS */
 
 .catalog {
   display: grid;
@@ -194,8 +165,6 @@ section {
   box-shadow: 0 0 25px #ff65ad35;
 }
 
-/* IMAGENES DE FONDO */
-
 .cover {
   position: relative;
   height: 250px;
@@ -211,9 +180,7 @@ section {
   transition: transform .5s;
 }
 
-.game:hover .cover img {
-  transform: scale(1.08);
-}
+.game:hover .cover img { transform: scale(1.08); }
 
 .cover::after {
   content: "";
@@ -233,15 +200,13 @@ section {
   bottom: 18px;
   left: 20px;
   right: 15px;
-  font-size: 27px;
+  font-size: 25px;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-shadow: 0 2px 12px black;
 }
 
-.game-content {
-  padding: 20px;
-}
+.game-content { padding: 20px; }
 
 .category {
   color: var(--pink2);
@@ -287,8 +252,6 @@ section {
   text-align: center;
 }
 
-/* APLICACION */
-
 .app-box {
   text-align: center;
   background: linear-gradient(135deg, #291222, #151018);
@@ -297,16 +260,10 @@ section {
   padding: 45px 20px;
 }
 
-.app-box h2 span {
-  color: var(--pink);
-}
-
 .app-box p {
   color: #c6b9c3;
   line-height: 1.7;
 }
-
-/* FOOTER */
 
 footer {
   border-top: 1px solid #382333;
@@ -317,11 +274,7 @@ footer {
   line-height: 1.8;
 }
 
-footer strong {
-  color: var(--pink);
-}
-
-/* VENTANA DE INFORMACION */
+footer strong { color: var(--pink); }
 
 dialog {
   background: #17131a;
@@ -333,9 +286,7 @@ dialog {
   width: calc(100% - 35px);
 }
 
-dialog::backdrop {
-  background: #000c;
-}
+dialog::backdrop { background: #000c; }
 
 dialog p {
   color: var(--muted);
@@ -351,24 +302,11 @@ dialog p {
   cursor: pointer;
 }
 
-/* MOVILES */
-
 @media(max-width:600px) {
-  header {
-    justify-content: center;
-  }
-
-  nav {
-    justify-content: center;
-  }
-
-  .hero {
-    padding: 65px 15px;
-  }
-
-  .cover {
-    height: 220px;
-  }
+  header { justify-content: center; }
+  nav { justify-content: center; }
+  .hero { padding: 65px 15px; }
+  .cover { height: 220px; }
 }
 </style>
 </head>
@@ -376,7 +314,6 @@ dialog p {
 <body>
 
 <header>
-
   <div class="logo">
     PS2 <span>GAMER STORE</span>
   </div>
@@ -386,31 +323,19 @@ dialog p {
     <a href="#juegos">Catálogo</a>
     <a href="#app">Aplicación</a>
   </nav>
-
 </header>
 
 <main>
 
-<!-- PORTADA PRINCIPAL -->
-
 <div class="hero" id="inicio">
-
   <div class="tag">LA LEYENDA CONTINÚA</div>
-
   <h1>PLAYSTATION <span>2</span></h1>
-
   <p>
     Un espacio para descubrir, organizar y disfrutar<br>
     del mundo de PlayStation.
   </p>
-
-  <a class="button" href="#juegos">
-    EXPLORAR CATÁLOGO
-  </a>
-
+  <a class="button" href="#juegos">EXPLORAR CATÁLOGO</a>
 </div>
-
-<!-- CATALOGO -->
 
 <section id="juegos">
 
@@ -423,10 +348,7 @@ dialog p {
     con distribución autorizada.
   </p>
 
-  <!-- BUSCADOR Y FILTROS -->
-
   <div class="tools">
-
     <input
       class="search"
       id="search"
@@ -434,17 +356,12 @@ dialog p {
       oninput="filtrar()"
     >
 
-    <select
-      class="filter"
-      id="category"
-      onchange="filtrar()"
-    >
+    <select class="filter" id="category" onchange="filtrar()">
       <option value="todos">Todas las categorías</option>
       <option value="ps2">Juegos de PS2</option>
       <option value="ps1">Juegos de PS1</option>
       <option value="mods">Mods y herramientas</option>
     </select>
-
   </div>
 
   <div class="catalog" id="catalog">
@@ -452,127 +369,93 @@ dialog p {
     <!-- JUEGOS PS2 -->
 
     <article class="game" data-category="ps2">
-
       <div class="cover">
-
-        <img
-          src="imagenes/ps2.jpg"
-          alt="Consola y mando de PlayStation 2"
-        >
-
-        <div class="cover-title">
-          JUEGOS DE PS2
-        </div>
-
+        <img src="imagenes/ps2.jpg" alt="Consola y mando de PlayStation 2">
+        <div class="cover-title">JUEGOS DE PS2</div>
       </div>
 
       <div class="game-content">
-
         <div class="category">PLAYSTATION 2</div>
-
         <h3>Juegos de PS2</h3>
-
         <p>
           Descubre juegos y proyectos para PlayStation 2
           con distribución autorizada.
         </p>
+        <button class="details" onclick="detalles(
+          'Juegos de PS2',
+          'Aquí encontrarás juegos y proyectos de PS2 con distribución autorizada.'
+        )">VER INFORMACIÓN</button>
+      </div>
+    </article>
 
-        <button
-          class="details"
-          onclick="detalles(
-            'Juegos de PS2',
-            'Aquí encontrarás juegos y proyectos de PS2 con distribución autorizada.'
-          )"
+    <!-- NEED FOR SPEED MOST WANTED -->
+
+    <article class="game" data-category="ps2">
+      <div class="cover">
+        <img
+          src="imagenes/nfs-most-wanted.jpg"
+          alt="Portada de Need for Speed Most Wanted para PlayStation 2"
         >
-          VER INFORMACIÓN
-        </button>
-
+        <div class="cover-title">NEED FOR SPEED</div>
       </div>
 
+      <div class="game-content">
+        <div class="category">PLAYSTATION 2 · CARRERAS</div>
+        <h3>Need for Speed: Most Wanted</h3>
+        <p>
+          Año: 2005<br>
+          Plataforma: PlayStation 2<br>
+          Carreras callejeras y persecuciones policiales.
+        </p>
+        <button class="details" onclick="detalles(
+          'Need for Speed: Most Wanted (2005)',
+          'Juego de carreras de Electronic Arts para PlayStation 2. Compite para subir en la lista negra, gana carreras y escapa de las persecuciones policiales. Esta ficha es informativa; utiliza copias del juego que poseas y archivos obtenidos legalmente.'
+        )">VER INFORMACIÓN</button>
+      </div>
     </article>
 
     <!-- JUEGOS PS1 -->
 
     <article class="game" data-category="ps1">
-
       <div class="cover">
-
-        <img
-          src="imagenes/ps1.jpg"
-          alt="Consola y mando de PlayStation 1"
-        >
-
-        <div class="cover-title">
-          JUEGOS DE PS1
-        </div>
-
+        <img src="imagenes/ps1.jpg" alt="Consola y mando de PlayStation 1">
+        <div class="cover-title">JUEGOS DE PS1</div>
       </div>
 
       <div class="game-content">
-
         <div class="category">PLAYSTATION 1</div>
-
         <h3>Juegos de PS1</h3>
-
         <p>
           Explora juegos y proyectos de PlayStation 1
           con distribución autorizada.
         </p>
-
-        <button
-          class="details"
-          onclick="detalles(
-            'Juegos de PS1',
-            'Aquí encontrarás juegos de PS1 con distribución autorizada.'
-          )"
-        >
-          VER INFORMACIÓN
-        </button>
-
+        <button class="details" onclick="detalles(
+          'Juegos de PS1',
+          'Aquí encontrarás juegos de PS1 con distribución autorizada.'
+        )">VER INFORMACIÓN</button>
       </div>
-
     </article>
 
     <!-- MODS Y HERRAMIENTAS -->
 
     <article class="game" data-category="mods">
-
       <div class="cover">
-
-        <img
-          src="imagenes/mods.png"
-          alt="Consola, USB y herramientas para PlayStation 2"
-        >
-
-        <div class="cover-title">
-          MODS Y TOOLS
-        </div>
-
+        <img src="imagenes/mods.png" alt="Herramientas para PlayStation 2">
+        <div class="cover-title">MODS Y TOOLS</div>
       </div>
 
       <div class="game-content">
-
         <div class="category">MODS Y HERRAMIENTAS</div>
-
         <h3>Mods y herramientas</h3>
-
         <p>
           Recursos, modificaciones y herramientas
           para la comunidad PlayStation.
         </p>
-
-        <button
-          class="details"
-          onclick="detalles(
-            'Mods y herramientas',
-            'Aquí encontrarás modificaciones y herramientas disponibles legalmente.'
-          )"
-        >
-          VER INFORMACIÓN
-        </button>
-
+        <button class="details" onclick="detalles(
+          'Mods y herramientas',
+          'Aquí encontrarás modificaciones y herramientas disponibles legalmente.'
+        )">VER INFORMACIÓN</button>
       </div>
-
     </article>
 
   </div>
@@ -583,114 +466,63 @@ dialog p {
 
 </section>
 
-<!-- APLICACION WINDOWS -->
-
 <section id="app">
-
   <div class="app-box">
-
     <h2>
       PS2 GAMER <span>STORE</span> PARA WINDOWS
     </h2>
-
     <p>
       Administra tu biblioteca y prepara tus juegos autorizados<br>
       para utilizarlos con tu USB y OPL.
     </p>
-
     <a class="button" href="#app">
       DESCARGA PRÓXIMAMENTE
     </a>
-
   </div>
-
 </section>
 
 </main>
 
-<!-- PIE DE PAGINA -->
-
 <footer>
-
   <strong>PS2 GAMER STORE</strong><br>
-
   Proyecto independiente para la comunidad PlayStation.<br>
-
   Solo archivos con distribución autorizada.
-
 </footer>
 
-<!-- VENTANA DE INFORMACION -->
-
 <dialog id="info">
-
   <h2 id="info-title"></h2>
-
   <p id="info-text"></p>
-
-  <button
-    class="close"
-    onclick="document.getElementById('info').close()"
-  >
+  <button class="close" onclick="document.getElementById('info').close()">
     CERRAR
   </button>
-
 </dialog>
 
-<!-- JAVASCRIPT -->
-
 <script>
-
 function filtrar() {
-
-  const q = document
-    .getElementById('search')
-    .value
-    .toLowerCase();
-
-  const cat = document
-    .getElementById('category')
-    .value;
-
+  const q = document.getElementById('search').value.toLowerCase();
+  const cat = document.getElementById('category').value;
   let visibles = 0;
 
   document.querySelectorAll('.game').forEach(card => {
+    const coincideTexto = card.innerText.toLowerCase().includes(q);
+    const coincideCat = cat === 'todos' || card.dataset.category === cat;
+    const mostrar = coincideTexto && coincideCat;
 
-    const coincideTexto =
-      card.innerText.toLowerCase().includes(q);
-
-    const coincideCat =
-      cat === 'todos' ||
-      card.dataset.category === cat;
-
-    const mostrar =
-      coincideTexto && coincideCat;
-
-    card.style.display =
-      mostrar ? '' : 'none';
-
+    card.style.display = mostrar ? '' : 'none';
     if (mostrar) visibles++;
-
   });
 
   document.getElementById('empty').style.display =
     visibles === 0 ? 'block' : 'none';
-
 }
 
 function detalles(titulo, texto) {
-
-  document.getElementById('info-title').textContent =
-    titulo;
-
-  document.getElementById('info-text').textContent =
-    texto;
-
+  document.getElementById('info-title').textContent = titulo;
+  document.getElementById('info-text').textContent = texto;
   document.getElementById('info').showModal();
-
 }
-
 </script>
 
 </body>
 </html>
+```
