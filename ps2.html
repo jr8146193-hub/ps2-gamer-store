@@ -26,7 +26,7 @@ body {
 }
 
 header {
-  padding: 22px 7%;
+  padding: 22px 5%;
   background: #100d11;
   border-bottom: 1px solid #382333;
   display: flex;
@@ -50,12 +50,12 @@ header a {
 
 .hero {
   text-align: center;
-  padding: 75px 20px;
+  padding: 55px 20px;
   background: radial-gradient(ellipse, #57213f, #090909 75%);
 }
 
 .hero h1 {
-  font-size: clamp(35px, 6vw, 60px);
+  font-size: clamp(32px, 5vw, 52px);
   margin: 15px 0;
 }
 
@@ -66,21 +66,21 @@ header a {
   line-height: 1.7;
 }
 
-section { padding: 50px 7%; }
+section { padding: 35px 5%; }
 
-.section-title { font-size: 28px; }
+.section-title { font-size: 25px; }
 
 .section-title span { color: var(--pink); }
 
 .search {
   width: 100%;
-  padding: 15px;
+  padding: 13px;
   background: var(--panel);
   color: white;
   border: 1px solid #563348;
   border-radius: 8px;
   font-size: 15px;
-  margin: 15px 0 25px;
+  margin: 12px 0 22px;
 }
 
 .search:focus {
@@ -89,22 +89,22 @@ section { padding: 50px 7%; }
 
 .catalog {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 18px;
 }
 
 .game {
   background: var(--panel);
   border: 1px solid #352331;
-  border-radius: 15px;
+  border-radius: 12px;
   overflow: hidden;
   transition: .3s;
 }
 
 .game:hover {
-  transform: translateY(-7px);
+  transform: translateY(-5px);
   border-color: var(--pink);
-  box-shadow: 0 0 25px #ff65ad35;
+  box-shadow: 0 0 20px #ff65ad35;
 }
 
 .game-link {
@@ -114,7 +114,7 @@ section { padding: 50px 7%; }
 }
 
 .cover {
-  height: 300px;
+  height: 225px;
   background: #201321;
   overflow: hidden;
 }
@@ -126,35 +126,39 @@ section { padding: 50px 7%; }
   display: block;
 }
 
-.content { padding: 20px; }
+.content { padding: 13px; }
 
 .category {
   color: var(--pink2);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: bold;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
 
-h3 { font-size: 20px; }
+h3 {
+  font-size: 16px;
+  margin: 10px 0;
+}
 
 .content p {
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .details {
   display: block;
   width: 100%;
-  padding: 12px;
-  margin-top: 10px;
+  padding: 10px;
   background: transparent;
   color: var(--pink);
   border: 1px solid var(--pink);
   border-radius: 7px;
   cursor: pointer;
   font-weight: bold;
+  font-size: 12px;
   text-align: center;
+  text-decoration: none;
 }
 
 .details:hover {
@@ -179,7 +183,19 @@ footer {
 
 @media(max-width:600px) {
   header { justify-content: center; }
-  .cover { height: 250px; }
+
+  .catalog {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .cover { height: 190px; }
+}
+
+@media(max-width:360px) {
+  .catalog {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
@@ -233,7 +249,7 @@ footer {
 
       </a>
 
-      <div style="padding: 0 20px 20px;">
+      <div style="padding: 0 13px 13px;">
         <a class="details" href="nfs-most-wanted.html">
           VER FICHA DEL JUEGO
         </a>
