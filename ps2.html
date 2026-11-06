@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -106,6 +107,12 @@ section { padding: 50px 7%; }
   box-shadow: 0 0 25px #ff65ad35;
 }
 
+.game-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
 .cover {
   height: 300px;
   background: #201321;
@@ -137,6 +144,7 @@ h3 { font-size: 20px; }
 }
 
 .details {
+  display: block;
   width: 100%;
   padding: 12px;
   margin-top: 10px;
@@ -146,6 +154,7 @@ h3 { font-size: 20px; }
   border-radius: 7px;
   cursor: pointer;
   font-weight: bold;
+  text-align: center;
 }
 
 .details:hover {
@@ -158,32 +167,6 @@ h3 { font-size: 20px; }
   color: var(--muted);
   text-align: center;
   padding: 25px;
-}
-
-dialog {
-  background: var(--panel);
-  color: white;
-  border: 1px solid var(--pink);
-  border-radius: 14px;
-  padding: 25px;
-  max-width: 420px;
-  width: calc(100% - 35px);
-}
-
-dialog::backdrop { background: #000c; }
-
-dialog p {
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.close {
-  background: var(--pink);
-  color: black;
-  border: 0;
-  padding: 10px 18px;
-  border-radius: 7px;
-  cursor: pointer;
 }
 
 footer {
@@ -226,26 +209,36 @@ footer {
   <div class="catalog">
 
     <article class="game">
-      <div class="cover">
-        <img
-          src="imagenes/nfs-most-wanted.jpg"
-          alt="Need for Speed Most Wanted para PS2"
-        >
+
+      <a class="game-link" href="nfs-most-wanted.html">
+
+        <div class="cover">
+          <img
+            src="imagenes/nfs-most-wanted.jpg"
+            alt="Need for Speed Most Wanted para PS2"
+          >
+        </div>
+
+        <div class="content">
+          <div class="category">PLAYSTATION 2 · CARRERAS</div>
+
+          <h3>Need for Speed: Most Wanted</h3>
+
+          <p>
+            Año: 2005<br>
+            Plataforma: PlayStation 2<br>
+            Carreras callejeras y persecuciones policiales.
+          </p>
+        </div>
+
+      </a>
+
+      <div style="padding: 0 20px 20px;">
+        <a class="details" href="nfs-most-wanted.html">
+          VER FICHA DEL JUEGO
+        </a>
       </div>
 
-      <div class="content">
-        <div class="category">PLAYSTATION 2 · CARRERAS</div>
-        <h3>Need for Speed: Most Wanted</h3>
-        <p>
-          Año: 2005<br>
-          Plataforma: PlayStation 2<br>
-          Carreras callejeras y persecuciones policiales.
-        </p>
-
-        <button class="details" onclick="detalles()">
-          VER INFORMACIÓN
-        </button>
-      </div>
     </article>
 
   </div>
@@ -261,20 +254,6 @@ footer {
   Solo archivos con distribución autorizada.
 </footer>
 
-<dialog id="info">
-  <h2>Need for Speed: Most Wanted</h2>
-  <p>
-    Lanzado en 2005 para PlayStation 2.
-    Compite para subir en la lista negra, gana carreras
-    y escapa de las persecuciones policiales.
-    Esta ficha es informativa. Utiliza copias que poseas
-    y archivos obtenidos legalmente.
-  </p>
-  <button class="close" onclick="document.getElementById('info').close()">
-    CERRAR
-  </button>
-</dialog>
-
 <script>
 function filtrar() {
   const q = document.getElementById('search').value.toLowerCase();
@@ -289,10 +268,6 @@ function filtrar() {
 
   document.getElementById('empty').style.display =
     visibles === 0 ? 'block' : 'none';
-}
-
-function detalles() {
-  document.getElementById('info').showModal();
 }
 </script>
 
