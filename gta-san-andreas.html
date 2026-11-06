@@ -2,153 +2,225 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GTA San Andreas | PS2 GAMER STORE</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<title>GTA San Andreas | PS2 GAMER STORE</title>
 
-    body {
-      background: #080808;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      padding: 25px 15px;
-      text-align: center;
-      background: #111;
-      border-bottom: 2px solid #ff2b91;
-    }
-
-    header h1 {
-      color: #ff2b91;
-      font-size: 28px;
-    }
-
-    .contenedor {
-      max-width: 950px;
-      margin: 35px auto;
-      padding: 20px;
-    }
-
-    .volver {
-      display: inline-block;
-      color: #ff2b91;
-      text-decoration: none;
-      margin-bottom: 25px;
-      font-weight: bold;
-    }
-
-    .ficha {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      background: #151515;
-      border: 1px solid #292929;
-      border-radius: 14px;
-      padding: 25px;
-    }
-
-    .portada {
-      width: 260px;
-      max-width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-
-    .informacion {
-      flex: 1;
-      min-width: 240px;
-    }
-
-    h2 {
-      color: #ff2b91;
-      font-size: 27px;
-      margin-bottom: 20px;
-    }
-
-    .dato {
-      margin-bottom: 12px;
-      color: #ddd;
-    }
-
-    .dato strong {
-      color: #ff2b91;
-    }
-
-    .descripcion {
-      margin-top: 25px;
-      line-height: 1.7;
-      color: #ccc;
-    }
-
-    .descarga {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 13px 22px;
-      background: #333;
-      color: #aaa;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: not-allowed;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #777;
-      margin-top: 30px;
-    }
-  </style>
+<style>
+:root {
+  --pink: #ff65ad;
+  --pink2: #ff9bc9;
+  --black: #090909;
+  --panel: #17131a;
+  --muted: #aaa0aa;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--black);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+header {
+  padding: 22px 5%;
+  background: #100d11;
+  border-bottom: 1px solid #382333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.logo { font-size: 23px; font-weight: 900; }
+.logo span { color: var(--pink); }
+header a { color: var(--pink2); text-decoration: none; }
+.hero {
+  padding: 45px 5%;
+  background: radial-gradient(ellipse, #57213f, #090909 75%);
+}
+.container { max-width: 1050px; margin: auto; }
+.game-info {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 35px;
+  align-items: center;
+}
+.cover {
+  background: var(--panel);
+  padding: 12px;
+  border: 1px solid #563348;
+  border-radius: 12px;
+}
+.cover img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+}
+h1 { font-size: clamp(28px, 5vw, 44px); margin: 0 0 15px; }
+h1 span { color: var(--pink); }
+.description { color: #d0c4ce; line-height: 1.8; }
+.tag {
+  display: inline-block;
+  padding: 7px 12px;
+  background: #392034;
+  color: var(--pink2);
+  border-radius: 20px;
+  font-size: 12px;
+  margin: 5px 5px 5px 0;
+}
+section { padding: 35px 5%; }
+h2 { color: var(--pink); font-size: 23px; }
+.panel {
+  background: var(--panel);
+  border: 1px solid #352331;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+.panel p { color: var(--muted); line-height: 1.8; }
+.data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+.data div {
+  background: #211a24;
+  padding: 14px;
+  border-radius: 8px;
+}
+.data strong {
+  display: block;
+  color: var(--pink2);
+  margin-bottom: 7px;
+}
+.back, .download {
+  display: inline-block;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 15px;
+  text-decoration: none;
+}
+.back { background: var(--pink); color: black; }
+.back:hover { background: var(--pink2); }
+.download {
+  background: var(--pink);
+  color: black;
+  opacity: 0.5;
+  cursor: not-allowed;
+  border: none;
+}
+.download:focus { outline: 2px solid var(--pink2); }
+.download-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
+footer {
+  border-top: 1px solid #382333;
+  padding: 30px 15px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media(max-width:700px) {
+  .game-info { grid-template-columns: 1fr; }
+  .cover { max-width: 260px; margin: auto; }
+  .data { grid-template-columns: 1fr; }
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>PS2 GAMER STORE</h1>
-  </header>
+<header>
+  <div class="logo">PS2 <span>GAMER STORE</span></div>
+  <a href="ps2.html">← VOLVER AL CATÁLOGO</a>
+</header>
 
-  <main class="contenedor">
-    <a class="volver" href="ps2.html">← Volver al catálogo PS2</a>
+<div class="hero">
+  <div class="container game-info">
 
-    <section class="ficha">
-      <img class="portada"
-           src="imagenes/gta-san-andreas.jpg"
-           alt="Portada de GTA San Andreas">
+    <div class="cover">
+      <img src="imagenes/gta-san-andreas.jpg" alt="Portada GTA San Andreas PS2">
+    </div>
 
-      <div class="informacion">
-        <h2>Grand Theft Auto: San Andreas</h2>
+    <div>
+      <h1>GTA SAN <span>ANDREAS</span></h1>
 
-        <p class="dato"><strong>Año:</strong> 2004</p>
-        <p class="dato"><strong>Plataforma:</strong> PlayStation 2</p>
-        <p class="dato"><strong>Género:</strong> Acción y aventura</p>
-        <p class="dato"><strong>Desarrollador:</strong> Rockstar North</p>
-        <p class="dato"><strong>Distribuidor:</strong> Rockstar Games</p>
-
-        <div class="descripcion">
-          <p>
-            Grand Theft Auto: San Andreas es un juego de mundo abierto
-            en el que acompañamos a Carl Johnson en su regreso a Los Santos.
-            Explora ciudades, completa misiones y descubre una gran
-            variedad de actividades en uno de los títulos más populares
-            de PlayStation 2.
-          </p>
-        </div>
-
-        <span class="descarga">
-          Descarga próximamente
-        </span>
+      <div>
+        <span class="tag">PLAYSTATION 2</span>
+        <span class="tag">ACCIÓN Y AVENTURA</span>
+        <span class="tag">2004</span>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    PS2 GAMER STORE © 2026
-  </footer>
+      <p class="description">
+        Grand Theft Auto: San Andreas es un videojuego de acción
+        y mundo abierto protagonizado por Carl Johnson. Regresa
+        a Los Santos, explora el estado de San Andreas, completa
+        misiones y descubre una historia llena de aventuras.
+      </p>
+
+      <a class="back" href="ps2.html">VOLVER A LOS JUEGOS</a>
+
+      <br>
+
+      <a class="download" href="#" aria-disabled="true" onclick="return false;">
+        DESCARGAR JUEGO
+      </a>
+
+      <p class="download-note">
+        Descarga próximamente. Enlace autorizado pendiente
+        de configuración.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <h2>INFORMACIÓN DEL JUEGO</h2>
+
+    <div class="panel">
+      <div class="data">
+        <div><strong>Nombre</strong>Grand Theft Auto: San Andreas</div>
+        <div><strong>Año de lanzamiento</strong>2004</div>
+        <div><strong>Plataforma</strong>PlayStation 2</div>
+        <div><strong>Género</strong>Acción y aventura</div>
+        <div><strong>Desarrollador</strong>Rockstar North</div>
+        <div><strong>Distribuidor</strong>Rockstar Games</div>
+      </div>
+    </div>
+
+    <h2>ACERCA DEL JUEGO</h2>
+
+    <div class="panel">
+      <p>
+        Acompaña a Carl Johnson en su regreso a Los Santos,
+        donde deberá enfrentarse a problemas familiares,
+        conflictos entre bandas y desafíos por toda la ciudad.
+      </p>
+
+      <p>
+        Explora un enorme mundo abierto, conduce vehículos,
+        completa misiones y descubre diferentes lugares
+        del estado de San Andreas.
+      </p>
+
+      <p>
+        Esta ficha es informativa. PS2 GAMER STORE solamente
+        ofrecerá archivos cuya distribución esté autorizada
+        por sus respectivos titulares.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <strong>PS2 GAMER STORE</strong><br>
+  Proyecto independiente para la comunidad PlayStation.<br>
+  Solo archivos con distribución autorizada.
+</footer>
 
 </body>
 </html>
